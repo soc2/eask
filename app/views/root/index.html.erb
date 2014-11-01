@@ -1,0 +1,16 @@
+<div class="home">
+  <h1>home</h1>
+  <ul>
+    <li><%= link_to("main", main_index_path) %></li>
+    <li><%= link_to("kazuki", kazuki_index_path) %></li>
+    <li><%= link_to("yuki",   yuki_index_path)   %></li>
+    <li><%= link_to("yuta",   yuta_index_path)   %></li>
+  </ul>
+
+  <a href="#modal" rel="leanModal">開く</a>
+  <div id="modal" style="display:none; background:white; padding:2em">
+    <div><a class="modal_close" href="#">close</a></div>
+    hogehogehoge
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eask</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="header">
+    <A href="http://172.16.30.14:3000/"><%= image_tag("icon_home.jpg", {width: 50})%></A>
+    <%= image_tag("icon_line.jpg", {width: 50})%>一歩踏み出す勇気 ハッカソン 習作アプリ
+    <div style="position:absolute; top:0; right:1em;">
+      <%= image_tag("contact2.jpg", {width: 50})%>
+    </div>
+  </div>
+  <div class="main">
+    <%= yield %>
+  </div>
+</body>
+</html>
