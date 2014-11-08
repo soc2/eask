@@ -31,40 +31,53 @@
    </ul>
 </UL>
 
- <a href="#modal01"><input type="button" value="新規作成"></a>
-  <div id="modal01" style="display:none; background:#b9c42f; padding:2em">
- 	<div><a class="modal_close" href="#"><input type="button" value="×"></a>
- 		   <!--モーダルウィンドウの中身-->
-	<br>
-	<B>
-	<p> >><a href="#open01">質問</a></p>	
-		<br>
+<script type="text/javascript">
+$(function(){
+	$("#newCreate").button().on("click",function(){
+		dialog.dialog("open");
+	});
 
-	<p> >><a href="#open02">４択</a></p>
-	
-		<br>
-	<div id="modal02">
-	<div id="open01">
-	
-	<span class="modal_window">
-	<a href="#" class="closs_overlay">×</a>
-	<h2>質問内容設定</h2>
-	<p>	質問したいことを入力してください</p>
-	<textarea cols="30"rows="5"name="situmon"></textarea>
-	<a href="#">ｃｌｏｓｅ</a>
-	</span>
-	</div>
+	dialog = $("#dialog-form").dialog({
+		autoOpen:false,
+		height: 120,
+		width: 350,
+		modal: true,
+		buttons: {
+			"質問":function(){
+				dialog.dialog("close");
+				dialog2.dialog("open");
+			},
+			"四択":function(){
+				dialog.dialog("close");
+			}
+		}
+	});
+
+	dialog2 = $("#dialog-form2").dialog({
+		autoOpen:false,
+		height: 300,
+		width: 500,
+		modal: true,
+		buttons: {
+			"作成":function(){
+				dialog2.dialog("close");
+			},
+			"キャンセル":function(){
+				dialog2.dialog("close");
+			}
+		}
+	});
+})
+</script>
+<div id="dialog-form" title="newCreate">
+<form>
+
+</form>
 </div>
-		<br>
-		<br>
-	</B>
-	</div>
-
- 	</div>
- 
-
-
+<button id="newCreate">新規作成</button>
+<div id="dialog-form2" title="質問内容">
 <form>
 	<textarea cols="30"rows="5"name="com1">上手にできてるかな？</textarea>
 	<input type="submit" name="ok">
 </form>
+</div>
