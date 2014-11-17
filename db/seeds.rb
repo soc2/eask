@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# coding: utf-8
+
+puts "start the test."
+puts Title.count
+Title.create(:name => '観察日記')
+Title.create(:name => 'Simple Life')
+Title.create(:name => 'メガネ入門')
