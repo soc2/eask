@@ -5,6 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-User.create(:id =>1:name=>'〇〇講師');
-User.create(:id =>2:name=>'××生徒');

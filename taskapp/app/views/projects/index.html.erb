@@ -1,0 +1,14 @@
+<h1>質問一覧</h1>
+
+<ul>
+<%= link_to "[新規作成]", new_project_path %>
+	<p>質問をクリックすると回答ができます。</p>
+	<% @projects.each do |project| %>
+	番号：<%= project.id %>.[<%= link_to project.title ,project_path(project.id)%>] 
+		<div align= "right"><%= link_to "[編集]",edit_project_path(project.id)%>
+		<%= link_to "[削除]",project_path(project.id), method: :delete,data:{confirm:"削除しますか？"} %></div>
+	
+	<% end %>
+
+
+</ul>
