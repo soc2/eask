@@ -1,0 +1,20 @@
+
+
+<%= form_for@project do |f| %>
+
+<p>
+	<h2>質問の作成または変更の画面です。</h2>
+	<br>
+	<%= f.text_field :title %>
+	<% if @project.errors.any? %>
+	<%= @project.errors.messages[:title][0] %>
+	<% end%>
+
+</p>
+<p>
+	<%= f.submit value:"作戦開始"%>
+</p>
+
+
+
+<% end %>

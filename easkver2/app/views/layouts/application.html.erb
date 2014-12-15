@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Eask</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", media: "all" %>
+   <link rel="stylesheet" href="/jquery-ui-1.11.2/jquery-ui.css">
+  <script src="/jquery-ui-1.11.2/jquery-ui.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+    <A href="http://172.16.30.14:3000/"><%= image_tag("icon_home.jpg", {width: 50})%></A>
+    <%= image_tag("icon_line.jpg", {width: 50})%>eask ver.0.1.4
+
+  </div>
+  <div class="main">
+    <%= yield %>
+  </div>
+  <ul>
+<%= link_to "[質問一覧へ]", projects_path %>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<h1><%= @project.title  %>
+	<from>
+		<input type="button" value="pass">
+	</from></h1>
+
+<ul>
+<% @project.tasks.each do |task| %>
+<li>
+	<%= task.title %>
+
+	<%= link_to "[回答削除]",project_task_path(task.project_id,task.id), method: :delete,data:{confirm:"削除しますか？"} %>
+	<br>
+	<hr color ="pink">
+</li>
+	<%end%>
+<li>
+	<%= form_for [@project, @project.tasks.build] do |f| %>
+</li>
+	<%= f.text_field :title %>
+	<%= f.submit value:"回答作成" %>
+	<%end%>
+
+<script>
+$(function(){
+	$("input[type = button]").click(function(){
+		$.post('/projects/<%= @project.id  %>/toggle');
+	});
+});
+</script>
+
+</ul>
