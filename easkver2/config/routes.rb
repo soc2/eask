@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 resources :projects do 
   resources :tasks,only: [:create, :destroy]
 end
+
+resources :project2s do 
+  resources :task2s,only: [:create, :destroy]
+end
  post '/projects/:project_id/toggle' => 'projects#toggle'
 
 root 'projects#index'
